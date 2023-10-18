@@ -1,10 +1,16 @@
-import {useState} from 'react'
+import {useState, useContext} from 'react'
 
 import { Navbar as NavbarBs,NavbarBrand, Button, Modal, ModalBody} from 'react-bootstrap'
 import {BsCart} from 'react-icons/bs'
+import {CartContext} from '../context/CartContext'
 
 function Navbar(){
   const [showModal,setShowModal] = useState(false)
+
+  const cart = useContext(CartContext)
+
+  const productsCount = cart.items.reduce((sum, product)=> sum + product.quantity , 0)
+
 
   const handleShow=()=>{
     setShowModal(true)
@@ -19,7 +25,7 @@ return(
 <NavbarBrand href="/" className="text-white">X-SHOP</NavbarBrand>
   <NavbarBs.Collapse className='justify-content-end'>
     <Button onClick={handleShow} variant='btn btn-outline-secondary' className='text-white'>
-      <BsCart className='mx-2'></BsCart>سبد خرید</Button>
+      ({productsCount})<BsCart className='mx-2'></BsCart>سبد خرید</Button>
   </NavbarBs.Collapse>
 </NavbarBs>
 
