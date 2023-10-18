@@ -4,7 +4,7 @@ import { productList } from '../data/items'
 
 function Shop(){
   return (
-     <Row xs={1} md={4} className='g-3 mt-2'>
+     <Row xs={1} md={3} lg={4} className='g-3 mt-2'>
       {productList.map((item)=>(
         <Col align='center' key={item.id}>
           <ProductItem  product={item} />
