@@ -17,7 +17,7 @@ function ProductItem({product}){
         <Card.Text align='right' className="text-light">
           {product.price}
         </Card.Text>
-        <Button size="sm" variant="outline-secondary text-black" >افزودن به سبد خرید</Button>
+        <Button size="sm" variant="outline-secondary" >افزودن به سبد خرید</Button>
       </Card.Body>
     </Card>
   )
