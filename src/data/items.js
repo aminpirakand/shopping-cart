@@ -29,6 +29,36 @@ const productList = [
     price: 690, 
     image:'./images/laptop5.png'
   },
+  {
+    id : 6,
+    title:'Asus 6',
+    price: 990, 
+    image:'./images/laptop1.png'
+  },
+  {
+    id : 7,
+    title:'Asus 7',
+    price: 690, 
+    image:'./images/laptop2.png'
+  },
+  {
+    id : 8,
+    title:'Asus 8',
+    price: 490, 
+    image:'./images/laptop3.png'
+  },
+  {
+    id : 9,
+    title:'Asus 9',
+    price: 490, 
+    image:'./images/laptop4.png'
+  },
+  {
+    id : 10,
+    title:'Asus 10',
+    price: 720, 
+    image:'./images/laptop2.png'
+  }
 ]
 function getProductData(id){
   let productData = productList.find((item)=> item.id === id)
