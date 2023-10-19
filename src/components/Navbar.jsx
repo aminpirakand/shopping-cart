@@ -41,7 +41,7 @@ return(
             <CartProduct key={item.id} id={item.id} 
             quantity={item.quantity}></CartProduct>
           ))}
-
+        <h4>مجموع قیمت: {cart.getTotalAmount()} تومان</h4>
         </>
       ) : (
           <h3>سبد خرید خالی است</h3>  

@@ -64,6 +64,7 @@ function getTotalAmount(){
     totalAmount += productData.price * item.quantity
   
   })
+  return totalAmount
 }
 
   const ContextValue = {
