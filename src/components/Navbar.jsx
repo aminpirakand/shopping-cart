@@ -3,7 +3,7 @@ import {useState, useContext} from 'react'
 import { Navbar as NavbarBs,NavbarBrand, Button, Modal, ModalBody} from 'react-bootstrap'
 import {BsCart} from 'react-icons/bs'
 import {CartContext} from '../context/CartContext'
-
+import CartProduct from './CartProduct'
 function Navbar(){
   const [showModal,setShowModal] = useState(false)
 
@@ -29,10 +29,29 @@ return(
   </NavbarBs.Collapse>
 </NavbarBs>
 
-<Modal show={showModal} onHide={handleClose} contentClassName='card-bg' dir='rtl'>
-  <Modal.Header closeButton closeVariant='white'>
-    <Modal.Title>سبد خرید</Modal.Title>
-    <Modal.Body>محصول</Modal.Body>
+<Modal show={showModal} onHide={handleClose} contentClassName='card-bg'  dir='rtl'>
+  <Modal.Header className="bg-dark">
+    <Modal.Body>
+      {productsCount > 0 ? (
+        <>
+        <div className='border-bottom border-secondary mb-4'>
+          <h3 className='my-2'>سبد خرید</h3>
+        </div>
+          {cart.items.map((item)=>(
+            <CartProduct key={item.id} id={item.id} 
+            quantity={item.quantity}></CartProduct>
+          ))}
+
+        </>
+      ) : (
+          <h3>سبد خرید خالی است</h3>  
+      )}
+      <Button 
+      onClick={handleClose}
+      variant='btn btn-outline-secondary'
+      className='mt-4 mx-auto text-white'
+      >بستن</Button>
+      </Modal.Body>
   </Modal.Header>
 </Modal>
 </>
