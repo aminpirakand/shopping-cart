@@ -37,7 +37,8 @@ return(
  <Link to='/about' className='btn text-white'>درباره ما</Link>
   <NavbarBs.Collapse className='justify-content-end'>
     <Button onClick={handleShow} variant='btn btn-outline-secondary' className='text-white'>
-      ({productsCount})<BsCart className='mx-2'></BsCart>سبد خرید</Button>
+      (<span className='text-warning'>{productsCount}</span>)
+      <BsCart className='mx-2'></BsCart>سبد خرید</Button>
   </NavbarBs.Collapse>
 </NavbarBs>
 
